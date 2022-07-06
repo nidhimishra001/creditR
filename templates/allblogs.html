@@ -1,0 +1,98 @@
+
+         {% extends 'base.html' %}
+
+         {% block title %}
+         All blogs list
+         {% endblock title %}
+         
+         {% block body %}
+         
+         <!-- main-area -->
+         <main>
+             <!-- blog-area -->
+            <!-- <section id="parallax" class="slider-area slider-bg2 second-slider-bg d-flex fix" style="background-image: url(static/img/bg/pink-header-bg.png); background-position:right 0; background-repeat: no-repeat; background-size: 65%;"> -->
+            
+           
+             <section id="blog" class="blog-area p-relative pt-70" style="background-image: url(static/img/shape/header-sape8.png); background-position: right center; background-size: auto;background-repeat: no-repeat;">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-xl-7 col-lg-10">
+                            <div class="section-title text-center mb-50">                               
+                                <h2>Our Latest Blog & News</h2>
+                                <p>Quisque posuere mollis ipsum et molestie. Fusce cursus, risus vel scelerisque porttitor, leo quam vulputate nibh, sit amet blandit erat magna.</p>
+                                 <!-- <a href="allblogs"><button class="btn" >View All Blogs</button></a> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+
+                        {% for blog in blogs %}
+
+                        <div class="col-lg-4 col-md-12">
+                             <div class="single-post mb-30">
+                                <div class="blog-thumb">
+                                    <a href="{% url 'blogdetails' blog.id %}"><img src="{{blog.image.url}}" alt="img" width="30px" height="300px"></a>
+                                </div>
+                                <div class="blog-content">
+                                    <div class="b-meta mb-40">
+
+                                        <ul>                                           
+                                            <li><a href="#">{{blog.date}}</a></li>
+                                        </ul>
+                                    </div>
+                                    <h4><a href="{% url 'blogdetails' blog.id %}">{{blog.blogname}}</a></h4>
+                                    <p> {{blog.description}}.</p>
+                                     <div class="admin">
+                                            <ul>
+                                                 <li><img src="static/img/blog/comment/c_01.png" alt="test" width="40px" height="40px"></li>
+                                                <li>{{blog.author}}</li>
+                                            </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+ 
+                    </div>
+                {% if blogs.has_other_pages %}
+          <div class="pagination-wrap d-flex mt-4">
+            <ul class="pagination mt-0">
+              {% if blogs.has_other_pages %}
+              <ul class="pagination mt-0">
+                {% if blogs.has_previous %}
+                  <li><a href="?page={{ blogs.previous_page_number }}">&laquo;</a></li>
+                {% else %}
+                  <li class="disabled"><span>&laquo;</span></li>
+                {% endif %}
+                {% for i in blogs.paginator.page_range %}
+                  {% if blogs.number == i %}
+                    <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+                  {% else %}
+                    <li><a href="?page={{ i }}">{{ i }}</a></li>
+                  {% endif %}
+                {% endfor %}
+                {% if blogs.has_next %}
+                  <li><a href="?page={{ blogs.next_page_number }}">&raquo;</a></li>
+                {% else %}
+                  <li class="disabled"><span>&raquo;</span></li>
+                {% endif %}
+              </ul>
+              {% endif %}
+                </div>
+            </section>
+            {% endif %}
+        </section> 
+            
+            <!-- blog-area-end -->
+
+            </main>
+
+
+
+
+
+{% endblock %}
+
+<!-- Mirrored from zcube.in/bingle/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 May 2022 13:51:03 GMT -->
+<!-- </html> -->
+   

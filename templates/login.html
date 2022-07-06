@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}
+login to creditR
+{% endblock title%}
+
+{% block body %}
+
+{% load static %}
+<div class="row" style="background:url(static/img/bg/mobile2.png); background-repeat: no-repeat; background-size: contain;">
+    <div class="col-md-3">
+      <div class="login">
+    <form action="login" method="POST">
+        {% csrf_token %}
+        <label for="username">Username</label><br>
+        <input type="text" id="username" name="username"><br><br>
+
+        <label for="Password">Password</label><br>
+        <input type="password" id="password" name="password"><br><br>
+
+        <input class="btn btn--sm" type="submit" value="Submit">
+        <input class="btn btn--sm" type="reset" value="reset">
+        
+
+    </form>
+</div>
+</div>
+<div class="col-md-4">
+    <img src="static/img/bg/mobile.png" alt="mobile">
+</div>
+</div>
+{% endblock body %}

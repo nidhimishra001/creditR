@@ -1,0 +1,1134 @@
+{% extends 'base.html' %}
+
+{% block title %}
+homepage
+{% endblock title %}
+
+{% block body %}
+
+    <body>
+        <!-- main-area -->
+        <main>
+            <!-- slider-area -->
+            <section id="parallax" class="slider-area slider-bg2 second-slider-bg d-flex fix" style="background-image: url(static/img/bg/pink-header-bg.png); background-position:right 0; background-repeat: no-repeat; background-size: 65%;">
+                
+                <div class="slider-shape ss-one layer" data-depth="0.10"><img src="static/img/shape/header-sape4.png" alt="shape"></div>
+               
+     			 <div class="slider-shape ss-eight layer" data-depth="0.50"></div>
+                
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="slider-content second-slider-content left-center">         
+                                        <ul class="small-title mb-30">
+                                            <!-- <li>New</li> -->
+                                            <a href="#" class="btn ss-btn" data-animation="fadeInUp" data-delay=".8s">Credit Loan Mobile Application</a>
+                                         
+                                        </ul>
+                                        <h2 data-animation="fadeInUp" data-delay=".4s">Mobile Application for all Credit Solution!</span></h2>
+                                        <p data-animation="fadeInUp" data-delay=".6s">CreditR mobile application is used to solved the users problem related to credit activities.</p>
+                                        <div class="slider-btn mt-30 mb-30">
+                                            <a href="#" class="btn ss-btn" data-animation="fadeInUp" data-delay=".8s">Download Now</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                 <div class="col-lg-6">
+                                     <img src="static/img/bg/mobile.png" alt="shape" class="s-img">
+                                </div>
+                            </div>
+                    
+                </div>
+            </section>
+            <!-- slider-area-end -->
+     <!-- calculator Start -->
+     
+  <section id="calculator" class="calculator-section" >
+    <div class="container" >
+      <div class="row">
+        <div class="col-lg-12">
+          <h2 class="section-heading">
+            Loan Calculator</h2><hr>
+          <p class="section-para">It helps you get an accurate estimate of your EMI amount
+             so that you can plan your finances accordingly. Make sure that your debt-to-income ratio 
+             is below 50% to maximize your chances of loan approval.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4">
+          <form class="form-calculator" id="myForm">
+            <div class="form-group">
+              <label for="amount">Loan Amount:</label>
+              <div class="input-group mb-4">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">&#x20B9</div>
+                </div>
+                <input type="text" class="form-control"  id=loan1 value="">
+              </div>
+              <div id="slider" class="emi-input"></div>
+            </div>
+
+            <div class="form-group">
+              <label for="amount">Interest Rate :</label>
+              <div class="input-group mb-4">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">%</div>
+                </div>
+                <input type="text" class="form-control" id=rate1  value="">
+              </div>
+              <div id="slider-interest" class="emi-input"></div>
+            </div>
+
+            <div class="form-group">
+              <label for="amount">Loan Tenure :</label>
+              <div class="input-group mb-4">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">Months</div>
+                </div>
+                <input type="text" class="form-control" id=months1 onchange=emi();  value="">
+              </div>
+              <div id="slider-tenure" class="emi-input"></div>
+            </div>
+            <button type=reset class="btn" >Reset</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button type=button class="btn" onclick='emi()'>Submit</button>
+          </form>
+        </div>
+        <div class="col-lg-4">
+          <div class="emi-details">
+            <div class="emi-details-head">
+              <h3>Your EMI Details</h3>
+            </div>
+            <div class="emi-details-box">
+            <div class="form-group">
+              <label for="emi">Loan EMI</label>
+              <div class="input-group mb-4">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">&#x20B9</div>
+                </div>
+                <input type="text" class="form-control" id=pay1  value="" disabled>
+              </div>
+              <div id="slider-interest" class="emi-input"></div>
+            </div>
+            </div>
+            <div class="emi-details-box">
+            <div class="form-group">
+              <label for="emi">Total Interest Payable</label>
+              <div class="input-group mb-4">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">&#x20B9</div>
+                </div>
+                <input type="text" class="form-control" id=tintt1  value="" disabled>
+              </div>
+              <div id="slider-interest" class="emi-input"></div>
+            </div>
+            </div>
+            <div class="emi-details-box no-bottom-border">
+            <div class="form-group">
+              <label for="emi">Total Payment</label>
+              <div class="input-group mb-4">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">&#x20B9</div>
+                </div>
+                <input type="text" class="form-control" id=gt1  value="" disabled>
+              </div>
+              <div id="slider-interest" class="emi-input"></div>
+            </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="pie-chart">
+            <div id="donutMorris"></div>
+            <span class="chart-principal"> Principal Amount</span>
+            <span class="chart-interest"> Interest Amount</span>
+             <div id="piechart" style="height: 400px; width:300px;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- calculator End -->
+
+  <!-- services Start -->
+  <section id="services" class="services-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h2 class="section-heading">Our Services</h2>
+          <p class="section-para">We provide you free access to your credit score anytime, anywhere. We also offer customized personal loan,home loan,car loan,gold loan,education loan,loans under government schemes like SIDBI and credit card options.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 col-sm-6">
+          <div class="service-box">
+            <div class="service-icon">
+              <img src="static/001-credit.png" alt="icon">
+            </div>
+            <div class="service-text">
+              <h3 class="service-heading">Home Loan</h3>
+              <p class="service-para">CreditR offers Home Loan of up to ₹3.5 crore at an interest rate starting at 7.5%* tenure up to 7 years.</p>
+            </div>
+
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-6">
+          <div class="service-box">
+            <div class="service-icon">
+              <img src="static/002-automobile.png" alt="icon">
+            </div>
+            <div class="service-text">
+              <h3 class="service-heading">Car Loan</h3>
+              <p class="service-para">CreditR offers Car Loans up to 100% of on-road price of the car, with attractive interest rates and tenure up to 7 years.</p>
+            </div>
+
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-6">
+          <div class="service-box">
+            <div class="service-icon">
+              <img src="static/003-profits.png" alt="icon">
+            </div>
+            <div class="service-text">
+              <h3 class="service-heading">Personal Loan</h3>
+              <p class="service-para">Collateral-free Personal Loans with EMIs starting from Rs.1400 with tenure of 9 years.</p>
+            </div>
+
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-6">
+          <div class="service-box">
+            <div class="service-icon">
+              <img src="static/004-ingots.png" alt="icon">
+            </div>
+            <div class="service-text">
+              <h3 class="service-heading">Gold Loan</h3>
+              <p class="service-para">CreditR Gold Loan can be availed by pledge of gold ornaments including gold coins sold by Banks with minimum paper work and low interest rate.</p>
+            </div>
+
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-6">
+          <div class="service-box">
+            <div class="service-icon">
+              <img src="static/005-mortarboard.png" alt="icon">
+            </div>
+            <div class="service-text">
+              <h3 class="service-heading">Education Loan</h3>
+              <p class="service-para">With an CreditR Education Loan you can enjoy a host of benefits such as simple documentation, quick loan disbursal, tax benefit u/s 80(E), long repayment tenure.</p>
+            </div>
+
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-6">
+          <div class="service-box">
+            <div class="service-icon">
+              <img src="static/006-credit-card.png" alt="icon">
+            </div>
+            <div class="service-text">
+              <h3 class="service-heading">Credit Card Issue</h3>
+              <p class="service-para">Apply for CreditR credit card online to avail premium benefits & rewards. New credit card application in 3 easy steps. Get instant approval on credit cards.</p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- services End -->
+
+   <!-- Blog Start -->
+   <section id="blog" class="blog-section" style="background-image: url(static/img/shape/header-sape6.png); background-position: right top; background-size: auto;background-repeat: no-repeat;">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h2 class="section-heading">Simple Steps</h2>
+          <p class="section-para">This app having simple steps for getting the loan.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-15 col-sm-6">
+          <div class="blog-box">
+            <div class="blog-img">
+              <img src="static/02.png" class="img-fluid" alt="blog">
+            </div>
+            <div class="blog-text">
+              <div class="tags"><span>Registration</span><span>Credit&#x20B9</span></div>
+              <h3 class="blog-heading">Simple registration process </h3>
+              <p class="blog-para">Simple registration process via OTP service on mobile phones and get 
+              access in the world of credit services.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-15 col-sm-6" >
+          <div class="blog-box">
+            <div class="blog-img">
+              <img src="static/03_1.png" class="img-fluid" alt="blog">
+            </div>
+            <div class="blog-text">
+              <div class="tags"><span>Apply Loan</span><span>Credit&#x20B9</span></div>
+              <h3 class="blog-heading">Apply for different kind of loans</h3>
+              <p class="blog-para">Simply apply for different kind of loans via single step,simply 
+              add amount and get loans within a minutes</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-15 col-sm-6">
+          <div class="blog-box">
+            <div class="blog-img">
+              <img src="static/01 (1).png" class="img-fluid" alt="blog">
+            </div>
+            <div class="blog-text">
+              <div class="tags"><span>Specific Features</span><span>Credit&#x20B9</span></div>
+              <h3 class="blog-heading">Provides many of features</h3>
+              <p class="blog-para">There are several kind of features like loans,government schemes,credit card,
+              opening bank account are provided.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Blog End -->
+			 <!-- services-area -->
+            <section id="about" class="services-area services-bg pt-25 pb-20" style="background-image: url(static/img/shape/header-sape2.png); background-position: right top; background-size: auto;background-repeat: no-repeat;">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-xl-7 col-lg-10">
+                            <div class="section-title text-center pl-40 pr-40 mb-45">
+                                <h2>Our Features</h2>
+                                <p>Quisque posuere mollis ipsum et molestie. Fusce cursus, risus vel scelerisque porttitor, leo quam vulputate nibh, sit amet blandit erat magna.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4 col-md-12 mb-30">
+                            <div class="s-single-services active text-center">
+                                <div class="services-icon">
+                                   <img src="static/img/icon/f-icon1.png"/>
+                                </div>
+                                <div class="second-services-content">
+                                    <h5>Perfect UI Design</h5>
+                                    <p>Praesent ac vehicula sapien. Sed sollicitudin molestie consequat. Ut vitae ante ut mi vehicula vulputate.</p>
+                                    <a href="#"><span>1</span></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12 mb-30">
+                            <div class="s-single-services text-center">
+                                 <div class="services-icon">
+                                  <img src="static/img/icon/apw-Icon3.png"/>
+                                </div>
+                                <div class="second-services-content">
+                                    <h5>Great CSS Animation</h5>
+                                    <p>Praesent ac vehicula sapien. Sed sollicitudin molestie consequat. Ut vitae ante ut mi vehicula vulputate.</p>
+                                    <a href="#"><span>2</span></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12 mb-30">
+                           <div class="s-single-services text-center">
+                                <div class="services-icon">
+                                  <img src="static/img/icon/f-icon2.png"/>
+                                </div>
+                                <div class="second-services-content">
+                                    <h5>Fully Secured</h5>
+									<p>Praesent ac vehicula sapien. Sed sollicitudin molestie consequat. Ut vitae ante ut mi vehicula vulputate.</p>
+                                    <a href="#"><span>3</span></a>
+                                </div>
+                            </div>
+                        </div>
+                       
+                    </div>
+                  
+                </div>
+            </section>
+            <!-- services-area-end -->
+			<!-- choose-area -->
+            <section class="choose-area pt-100 pb-60 p-relative" style="background-image: url(static/img/shape/header-sape3.png); background-position: right center; background-size: auto;background-repeat: no-repeat;">
+                <div class="chosse-img" style="background-image:url(img/bg/easy-m-bg.png)"></div>
+                <div class="chosse-img2"><img src="static/img/bg/mobile2.png" alt="mobile"/></div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-5">
+                        </div>
+                        <div class="col-xl-7">
+                            <div class="choose-wrap">
+                                <div class="section-title w-title left-align mb-25">
+                                    <h2>Easy And Perfect Solution For Your Business App</h2>
+                                </div>
+                                <div class="choose-content">
+                                    <p>Aliquam aliquet purus a est consequat lobortis. Etiam vehicula suscipit purus, eget ullamcorper augue blandit vitae. Ut eu euismod felis. Etiam at varius quam. Vivamus lacinia pulvinar turpis in suscipit. Aenean mattis enim ut pretium gravida. Sed fermentum a lacus bibendum convallis.</p>
+                                     <p>Consequat purus aliquet a est aliquam lobortis. Etiam vehicula suscipit purus, eget ullamcorper augue blandit vitae. Ut eu euismod felis. Etiam at varius quam. Vivamus lacinia pulvinar turpis in suscipit. Aenean mattis enim ut pretium gravida. Sed fermentum a lacus bibendum convallis.</p>
+                                   
+                                    <div class="choose-btn mt-30">
+                                        <a href="#"><span class="icon"><img src="static/img/icon/apple-icon.png" alt="apple-icon"></span> 
+                                            <span class="text"> Available on <strong>APP STORE</strong></span></a>
+                                        <a href="#" class="g-btn"><span class="icon"><img src="static/img/icon/g-play-icon.png" alt="apple-icon"></span> 
+                                            <span class="text"> Available on <strong>GOOGLE PLAY</strong></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- choose-area-end -->
+            <!-- how-app-work -->
+            <section id="features" class="app-work pt-70 pb-100 p-relative" style="background-image: url(static/img/shape/header-sape4.png); background-position: right center; background-size: auto;background-repeat: no-repeat;">            
+                <div class="container">
+                    <div class="row align-items-center ">
+                       
+                        <div class="col-xl-6">
+                            <div class="choose-wrap">
+                                <div class="section-title w-title left-align mb-15">
+                                    <h2>How does This App Work?</h2>
+                                </div>
+                                <div class="app-work-content mt-20">
+                                    <ul>
+                                        <li>
+                                            <div class="icon"><img src="static/img/icon/apw-Icon1.png"></div> 
+                                            <div class="text">
+                                                <h4>Make A Profile</h4>
+                                                <p>Aliquam varius ligula nec leo tempus porta. Vestibulum suscipit leo at nunc imperdiet, quis lacinia nisi euismod.</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="icon"><img src="static/img/icon/apw-Icon2.png"></div> 
+                                            <div class="text">
+                                                <h4>Download It For Free</h4>
+                                                <p>Aliquam varius ligula nec leo tempus porta. Vestibulum suscipit leo at nunc imperdiet, quis lacinia nisi euismod.</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="icon"><img src="static/img/icon/apw-Icon3.png"></div> 
+                                            <div class="text">
+                                                <h4>Enjoy This App</h4>
+                                                <p>Aliquam varius ligula nec leo tempus porta. Vestibulum suscipit leo at nunc imperdiet, quis lacinia nisi euismod.</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                         <div class="col-xl-6">
+                            <img src="static/img/bg/app-work-img.png" alt="app-work-img" class="img">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- how-app-work -->
+            <!-- video-area -->
+            <section class="video-area pt-100 pb-100 p-relative">                
+                <div class="video-img2">
+                    
+                    <img src="static/img/bg/video-img.png" alt="mobile"/>
+                
+                    <a href="https://www.youtube.com/watch?v=7e90gBu4pas" class="popup-video"><img src="static/img/bg/play-btn.png" alt="play-btn.png"></a>
+                </div>
+                <div class="video-img3">
+                    <img src="static/img/shape/header-sape5.png" alt="header-sape4">
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-6">
+                        </div>
+                        <div class="col-xl-6">
+                            <div class="video-wrap">
+                                <div class="section-title w-title left-align mb-25">
+                                    <h2>Build The App That Everyone Love</h2>
+                                </div>
+                                <div class="video-content">
+                                    <p>Praesent fermentum nisl at ipsum facilisis viverra. Ut elementum accumsan finibus. Cras placerat lacinia mi, ac dictum ante. Donec libero enim, tincidunt sit amet venenatis id, maximus eu quam. </p>
+                                     <ul>
+                                        <li>
+                                            <div class="icon"><img src="static/img/icon/vs-icon.png"></div> 
+                                            <div class="text">Pellentesque placerat, nisi congue vehicula efficitur.
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="icon"><img src="static/img/icon/vs-icon.png"></div> 
+                                            <div class="text">Pellentesque placerat, nisi congue vehicula efficitur.
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="icon"><img src="static/img/icon/vs-icon.png"></div> 
+                                            <div class="text">Suspendisse vitae varius diam, a vulputate urna.
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- video-area-end -->
+            <!-- screen-area -->
+            <section id="screen" class="screen-area services-bg services-two pt-100 pb-70"  style="background-image: url(static/img/shape/header-sape4.png); background-position: right center; background-size: auto;background-repeat: no-repeat;">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-xl-8 col-lg-10">
+                            <div class="section-title text-center pl-40 pr-40 mb-50">                               
+                                <h2>Our App ScreenShots</h2>
+                                <p>Quisque posuere mollis ipsum et molestie. Fusce cursus, risus vel scelerisque porttitor, leo quam vulputate nibh, sit amet blandit erat magna.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        
+                         <!-- Swiper -->
+                          <div class="swiper-container">
+                            <div class="swiper-wrapper">
+                              <div class="swiper-slide"><img src="static/img/gallery/screen-img01.png" alt="slide 1"></div>
+                              <div class="swiper-slide"><img src="static/img/gallery/screen-img02.png" alt="slide 1"></div>
+                              <div class="swiper-slide"><img src="static/img/gallery/screen-img03.png" alt="slide 1"></div>
+                              <div class="swiper-slide"><img src="static/img/gallery/screen-img04.png" alt="slide 1"></div>
+                              <div class="swiper-slide"><img src="static/img/gallery/screen-img05.png" alt="slide 1"></div>
+
+                            </div>
+                            <!-- Add Pagination -->
+                            <div class="swiper-pagination"></div>
+                          </div>
+
+          </div>
+                    </div>
+                    
+
+            </section>
+            <!-- screen-area-end -->     
+            
+            <!-- faq-area -->
+            <section class="faq-area pb-100" style="background-image: url(static/img/shape/header-sape6.png); background-position: right center; background-size: auto;background-repeat: no-repeat;">
+                <div class="container">
+                    <div class="row align-items-end">                        
+                        <div class="col-lg-6">
+                            <div class="faq-img text-right">
+                                <img src="static/img/icon/logos-icons.png" alt="img" class="img">
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="section-title left-align mb-50">                               
+                                <h2>Designed & Worked By The Latest Partners</h2>
+                                <p>Duis non aliquet tellus, in mollis leo. Phasellus quis posuere dui. Nulla mauris purus, mattis eget sagittis at, accumsan sed leo.</p>
+                            </div>
+                            <div class="faq-wrap">
+                                <div class="accordion" id="accordionExample">
+                                    <div class="card">
+                                        <div class="card-header" id="headingThree">
+                                            <h2 class="mb-0">
+                                                <button class="faq-btn" type="button" data-toggle="collapse"
+                                                    data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                                                    Aliquam varius ligula nec leo tempus porta.
+                                                </button>
+                                            </h2>
+                                        </div>
+                                        <div id="collapseThree" class="collapse show" aria-labelledby="headingThree"
+                                            data-parent="#accordionExample">
+                                            <div class="card-body">
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                                                aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header" id="headingOne">
+                                            <h2 class="mb-0">
+                                                <button class="faq-btn collapsed" type="button" data-toggle="collapse"
+                                                    data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                                   Suspendisse vitae varius diam, a vulputate urna.
+                                                </button>
+                                            </h2>
+                                        </div>
+                                        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                            <div class="card-body">
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                                                aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header" id="headingTwo">
+                                            <h2 class="mb-0">
+                                                <button class="faq-btn collapsed" type="button" data-toggle="collapse"
+                                                    data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                   Aliquam aliquet purus eget lacus pretium.
+                                                </button>
+                                            </h2>
+                                        </div>
+                                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                                            <div class="card-body">
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                                                aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                                            </div>
+                                        </div>
+                                    </div>
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- faq-aread-end -->
+            
+             <!-- newslater-area -->
+            <section class="newslater-area pt-90 pb-100" style="background-image: url(static/img/bg/subscribe-bg.png);background-size: cover;" >
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-xl-8 col-lg-10">
+                            <div class="section-title text-center pl-40 pr-40 mb-50">
+                                <h2>Subscreibe For New Features</h2>
+                                <p>Quisque posuere mollis ipsum et molestie. Fusce cursus, risus vel scelerisque porttitor, leo quam vulputate nibh, sit amet blandit erat magna.</p>
+                            </div>
+                        </div>
+                    </div>
+                   <div class="row justify-content-center">          
+                       <div class="col-xl-6 col-lg-10">
+                            <form name="ajax-form" id="contact-form4" action="#" method="post" class="contact-form newslater">
+                               <div class="form-group">
+                                  <input class="form-control" id="email2" name="email" type="email" placeholder="Email Address..." value="" required=""> 
+                                  <button type="submit" class="btn btn-custom" id="send2">Subscribe Now</button>
+                               </div>
+                               <!-- /Form-email -->	
+                            </form>
+                        </div>
+                        
+                    </div>
+                </div>
+            </section>
+            <!-- newslater-aread-end -->
+          
+			<!-- pricing-area -->
+            <section id="pricing" class="pricing-area pt-100 pb-50" style="background-image: url(static/img/shape/header-sape7.png); background-position: right center; background-size: auto;background-repeat: no-repeat;">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-xl-7 col-lg-8">
+                            <div class="section-title text-center mb-50">     
+                                <h2>Our Pricing Plans</h2>
+                                <p>Quisque posuere mollis ipsum et molestie. Fusce cursus, risus vel scelerisque porttitor, leo quam vulputate nibh, sit amet blandit erat magna.</p>
+                            </div>
+                             <nav class="pricing-tab mb-60">
+                        <span class="monthly_tab_title">
+                        Monthly                 </span>
+                        <span class="pricing-tab-switcher"></span>
+                        <span class="annual_tab_title">
+                        Annual                  </span>
+                     </nav>
+                        </div>
+                        
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6">
+                            <div class="pricing-box text-center mb-60">
+                                <div class="pricing-head">                                  
+                                    <h4>Beginner</h4>
+                                    <div class="pricing-amount">
+                                       <div class="annual_price">
+                                          <sup><span class="currency">$</span></sup>
+                                          <span class="price"> 95 </span>
+                                          <span class="subscription"> / Annual </span>
+                                       </div>
+                                       <div class="monthly_price">
+                                          <sup><span class="currency">$</span></sup>
+                                          <span class="price"> 15 </span>
+                                          <span class="subscription"> / Monthly </span>
+                                       </div>
+                                    </div>
+                                    <h5>I have a dream</h5>
+                                </div>
+                                
+                                <div class="pricing-body mb-40 text-left">
+                                    
+									<ul>
+										<li>1000+ projets</li>
+										<li>No transaction fees</li>
+										<li>Unlimited Storage</li>
+										<li>5 Download</li>
+									</ul>
+                                </div>
+                                <div class="pricing-btn">
+                                    <a href="#" class="btn">Start Now</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-3 col-md-6">
+                            <div class="pricing-box active text-center mb-60">
+                                <div class="poppuler">
+                                    <span class="btn">Poppuler</span>
+                                </div>
+                                <div class="pricing-head">                                  
+                                    <h4>Starter</h4>
+                                    <div class="pricing-amount">
+                                       <div class="annual_price">
+                                          <sup><span class="currency">$</span></sup>
+                                          <span class="price">  78 </span>
+                                          <span class="subscription"> /Annual </span>
+                                       </div>
+                                       <div class="monthly_price">
+                                          <sup><span class="currency">$</span></sup>
+                                          <span class="price"> 15 </span>
+                                          <span class="subscription"> /Monthly </span>
+                                       </div>
+                                    </div>
+                                    <h5>I have a dream</h5>
+                                </div>
+                                 <div class="pricing-body mb-40 text-left">
+                                    
+									<ul>
+										<li>1000+ projets</li>
+										<li>No transaction fees</li>
+										<li>Unlimited Storage</li>
+										<li>5 Download</li>
+									</ul>
+                                </div>
+                                <div class="pricing-btn">
+                                    <a href="#" class="btn">Start Now</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="pricing-box active text-center mb-60">                 
+                                <div class="pricing-head">                                  
+                                    <h4>Professionl</h4>
+                                    <div class="pricing-amount">
+                                       <div class="annual_price">
+                                          <sup><span class="currency">$</span></sup>
+                                          <span class="price">  90 </span>
+                                          <span class="subscription"> / Annual </span>
+                                       </div>
+                                       <div class="monthly_price">
+                                          <sup><span class="currency">$</span></sup>
+                                          <span class="price"> 18 </span>
+                                          <span class="subscription"> / Monthly </span>
+                                       </div>
+                                    </div>
+                                    <h5>I have a dream</h5>
+                                </div>
+                                
+                                  <div class="pricing-body mb-40 text-left">
+                                    
+									<ul>
+										<li>1000+ projets</li>
+										<li>No transaction fees</li>
+										<li>Unlimited Storage</li>
+										<li>5 Download</li>
+									</ul>
+                                </div>
+                                <div class="pricing-btn">
+                                    <a href="#" class="btn">Start Now</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                           <div class="pricing-box active text-center mb-60">
+                                <div class="pricing-head">                                   
+                                    <h4>Power Plan</h4>
+                                    <div class="pricing-amount">
+                                       <div class="annual_price">
+                                          <sup><span class="currency">$</span></sup>
+                                          <span class="price"> 120 </span>
+                                          <span class="subscription"> / Annual </span>
+                                       </div>
+                                       <div class="monthly_price">
+                                          <sup><span class="currency">$</span></sup>
+                                          <span class="price"> 25 </span>
+                                          <span class="subscription"> / Monthly </span>
+                                       </div>
+                                    </div>
+                                    <h5>I have a dream</h5>
+                                </div>
+                                <div class="pricing-body mb-40 text-left">
+                                    
+									<ul>
+										<li>1000+ projets</li>
+										<li>No transaction fees</li>
+										<li>Unlimited Storage</li>
+										<li>5 Download</li>
+									</ul>
+                                </div>
+                                <div class="pricing-btn">
+                                    <a href="#" class="btn">Start Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- pricing-area-end -->
+			
+            <!-- testimonial-area -->
+            <section id="testimonios" class="testimonial-area testimonial-p  pt-100 pb-70" style="background-image:url(static/img/bg/client-bg.png); background-repeat: no-repeat; background-position: right center;">
+                <div class="container">
+                    <div class="row">    
+                        <div class="col-lg-6">
+                             <div class="section-title center-align">                              
+                                <h2>What Our Clients Say’s</h2>
+                                <p>Quisque posuere mollis ipsum et molestie. Fusce cursus, risus vel scelerisque porttitor, leo quam vulputate nibh, sit amet blandit erat magna.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                           
+                            <div class="testimonial-active">
+                               <div class="col-xl-12">
+
+                               
+
+                                    <div class="single-testimonial">
+                                        <div class="testi-author text-left">
+                                            <img src="static/img/testimonial/testi_avatar.png" alt="img">
+                                            <div class="ta-info">
+                                                <h6>Mr Jone Dose</h6>
+                                                <span>Author</span>
+                                            </div>
+                                        </div>
+                                        <div class="qutation"><img src="static/img/bg/qutation.png" alt="qutation.png"></div>
+                                        
+                                        <p>Praesent fermentum nisl at ipsum fcilisis viverra elementum accumsan finibus. Cras placerat lacinia mitincidunt sit amet venenatis.</p>
+                                        
+                                    </div>
+                                </div> 
+                                
+                                <div class="col-xl-12">
+                                    <div class="single-testimonial">
+                                       <div class="testi-author text-left">
+                                            <img src="static/img/testimonial/testi_avatar2.png" alt="img">
+                                            <div class="ta-info">
+                                                <h6>Mr Jone Dose</h6>
+                                                <span>Author</span>
+                                            </div>
+                                        </div>
+                                         <div class="qutation"><img src="static/img/bg/qutation.png" alt="qutation.png"></div>
+                                         <p>Praesent fermentum nisl at ipsum fcilisis viverra elementum accumsan finibus. Cras placerat lacinia mitincidunt sit amet venenatis.</p>
+                                        
+                                       
+                                    </div>
+                                </div>
+                                 <div class="col-xl-12">
+                                    <div class="single-testimonial">
+                                         <div class="testi-author text-left">
+                                            <img src="static/img/testimonial/testi_avatar3.png" alt="img">
+                                            <div class="ta-info">
+                                                <h6>Mr Jone Dose</h6>
+                                                <span>Web Developer</span>
+                                            </div>
+                                        </div>
+                                         <div class="qutation"><img src="static/img/bg/qutation.png" alt="qutation.png"></div>
+                                        <p>Praesent fermentum nisl at ipsum fcilisis viverra elementum accumsan finibus. Cras placerat lacinia mitincidunt sit amet venenatis.</p>
+                                        
+                                    </div>
+                                </div>
+                                 <div class="col-xl-12">
+                                    <div class="single-testimonial">
+                                        <div class="testi-author text-left">
+                                            <img src="static/img/testimonial/testi_avatar.png" alt="img">
+                                            <div class="ta-info">
+                                                <h6>Mr Jone Dose</h6>
+                                                <span>Web Developer</span>
+                                            </div>
+                                        </div>
+                                        <div class="qutation"><img src="static/img/bg/qutation.png" alt="qutation.png"></div>
+                                         <p>Praesent fermentum nisl at ipsum fcilisis viverra elementum accumsan finibus. Cras placerat lacinia mitincidunt sit amet venenatis.</p>
+                                        
+                                    </div>
+                                </div>
+                                 <div class="col-xl-12"> 
+                                    <div class="single-testimonial">
+                                        <div class="testi-author text-left">
+                                            <img src="static/img/testimonial/testi_avatar.png" alt="img">
+                                            <div class="ta-info">
+                                                <h6>Mr Jone Dose</h6>
+                                                <span>Web Developer</span>
+                                            </div>
+                                        </div>
+                                        <div class="qutation"><img src="static/img/bg/qutation.png" alt="qutation.png"></div>
+                                        <p>Praesent fermentum nisl at ipsum fcilisis viverra elementum accumsan finibus. Cras placerat lacinia mitincidunt sit amet venenatis.</p>
+                                        
+                                    </div>
+                                </div>
+                                
+                                
+                            </div>
+                        </div>
+						
+                    </div>
+                </div>
+            </section>
+            <!-- testimonial-area-end -->
+           
+           
+            <!-- blog-area -->
+           
+            <section id="blog" class="blog-area p-relative pt-70" style="background-image: url(static/img/shape/header-sape8.png); background-position: right center; background-size: auto;background-repeat: no-repeat;">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-xl-7 col-lg-10">
+                            <div class="section-title text-center mb-50">                               
+                                <h2>Our Latest Blog & News</h2>
+                                <p>Quisque posuere mollis ipsum et molestie. Fusce cursus, risus vel scelerisque porttitor, leo quam vulputate nibh, sit amet blandit erat magna.</p>
+                                 <a href="allblogs"><button class="btn" >View All Blogs</button></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <!-- <div class="col-lg-4 col-md-12">
+                            <div class="single-post mb-30">
+                                <div class="blog-thumb">
+                                    <a href="blog-details.html"><img src="static/img/blog/inner_b1.jpg" alt="img"></a>
+                                </div>
+                                <div class="blog-content">
+                                    <div class="b-meta mb-40">
+                                        <ul>                                           
+                                            <li><a href="#">20 jan 2019</a></li>                                            
+                                        </ul>
+                                    </div>
+                                    <h4><a href="blog-details.html">Making Distribut Product Team
+                                    Work More With Monday</a></h4>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisi
+                                    cing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                    <div class="admin">
+                                            <ul>
+                                                <li><img src="static/img/blog/admin-img.png" alt="test"></li>
+                                                <li><h6>Jhon Abraham</h6> Author</li>
+                                            </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+                        <!-- <div class="col-lg-4 col-md-12">
+                             <div class="single-post mb-30">
+                                <div class="blog-thumb">
+                                    <a href="blog-details.html"><img src="static/img/blog/inner_b2.jpg" alt="img"></a>
+                                </div>
+                                <div class="blog-content">
+                                    <div class="b-meta mb-40">
+                                        <ul>                                           
+                                            <li><a href="#">20 jan 2019</a></li>                                         
+                                        </ul>
+                                    </div>
+                                    <h4><a href="blog-details.html">Monthly Web Development Upto Cost Of JavaScript Ethics</a></h4>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisi
+                                    cing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                    <div class="admin">
+                                            <ul>
+                                                 <li><img src="static/img/blog/admin-img.png" alt="test"></li>
+                                                <li><h6>Jhon Abraham</h6> Author</li>
+                                            </ul>
+                                    </div>
+                                </div> 
+                            </div>
+                        </div> -->
+
+                      {% for blog in blogs %}
+
+                        <div class="col-lg-4 col-md-12">
+                             <div class="single-post mb-30">
+                                <div class="blog-thumb">
+                                    <a href="{% url 'blogdetails' blog.id%}"><img src="{{blog.image.url}}" alt="img" width="30px" height="300px"></a>
+                                </div>
+                                <div class="blog-content">
+                                    <div class="b-meta mb-40">
+                                        <ul>                                           
+                                            <li><a href="#">{{blog.date}}</a></li>
+                                        </ul>
+                                    </div>
+                                    <h4><a href="blogdetails">{{blog.blogname}}</a></h4>
+                                    <p> {{blog.description}}.</p>
+                                     <div class="admin">
+                                            <ul>
+                                                 <li><img src="static/img/blog/comment/c_01.png" alt="test" width="40px" height="40px"></li>
+                                                <li>{{blog.author}}</li>
+                                            </ul>
+                                            <li>{{blog.editor}}</li>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+ 
+                    </div>
+                <!-- {% if blogs.has_other_pages %}
+          <div class="pagination-wrap d-flex mt-4">
+            <ul class="pagination mt-0">
+              {% if blogs.has_other_pages %}
+              <ul class="pagination mt-0">
+                {% if blogs.has_previous %}
+                  <li><a href="?page={{ blogs.previous_page_number }}">&laquo;</a></li>
+                {% else %}
+                  <li class="disabled"><span>&laquo;</span></li>
+                {% endif %}
+                {% for i in blogs.paginator.page_range %}
+                  {% if blogs.number == i %}
+                    <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+                  {% else %}
+                    <li><a href="?page={{ i }}">{{ i }}</a></li>
+                  {% endif %}
+                {% endfor %}
+                {% if blogs.has_next %}
+                  <li><a href="?page={{ blogs.next_page_number }}">&raquo;</a></li>
+                {% else %}
+                  <li class="disabled"><span>&raquo;</span></li>
+                {% endif %}
+              </ul>
+              {% endif %}
+                </div>
+            </section>
+            {% endif %} -->
+            
+            <!-- blog-area-end -->
+
+              <!-- my card content -->
+                        <!-- {% for blog in blogs %} 
+
+                        
+
+                        <div class="card mb-3" style="max-width: 540px;">
+                            <div class="row g-0">
+                              <div class="col-md-4">
+                                <img src="{{blog.image}}" class="img-fluid rounded-start" alt="blogimage">
+                              </div>
+                              <div class="col-md-8">
+                                <div class="card-body">
+                                  <h5 class="card-title">card title</h5>
+                                  <p class="card-text">{{blog.description}}</p>
+                                  <p class="card-text"><small class="text-muted">{{blog.author}}</small></p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          {% endfor %}  -->
+
+                        <!-- end card content -->
+			
+            <!-- contact-area -->
+            <section id="contact" class="contact-area contact-bg  pt-50 pb-100 p-relative fix"  style="background-image: url(img/shape/header-sape8.png); background-position: right center; background-size: auto;background-repeat: no-repeat;">
+                <div class="container">
+             
+					<div class="row">
+						<div class="col-lg-6">
+                            <div class="contact-img2">
+                                <img src="static/img/bg/illustration.png" alt="test">
+                            </div>						
+						</div>
+						<div class="col-lg-6">
+                            <div class="section-title mb-40">                              
+                                <h2>Get In Touch</h2>
+                                  <p>Contact us for any query.</p>
+                            </div>
+						<form action="contact" class="contact-form" method="POST">
+                            {% csrf_token %}
+							<div class="row">
+                            <div class="col-lg-12">
+                                <div class="contact-field p-relative c-name mb-20">                                    
+                                    <input type="text" placeholder="Name" id="name" name="name">
+                                </div>                               
+                            </div>
+							 <div class="col-lg-12">                    
+                                <div class="contact-field p-relative c-email mb-20">                                    
+                                    <input type="text" placeholder="Email" id="email" name="email">
+                                </div>                                
+                            </div>
+							 <div class="col-lg-12">                      
+                                <div class="contact-field p-relative c-subject mb-20">                                   
+                                    <input type="text" placeholder="Phone" id="phone" name="phone">
+                                </div>
+                            </div>
+							
+                            <div class="col-lg-12">
+                                <div class="contact-field p-relative c-message mb-45">                                  
+                                    <textarea name="message" id="message" cols="10" rows="10" placeholder="Write comments"></textarea>
+                                </div>
+                                <button  class="btn" value="submit">Send Message</button>
+                            </div>
+                            </div>
+                        
+                    </form>
+						</div>
+					</div>
+                    
+                </div>
+               
+            </section>
+            <!-- contact-area-end -->
+        </main>
+        <!-- main-area-end -->
+
+
+		<!-- JS here -->
+        <script>function emi(){if(document.getElementById('loan1').value==null || document.getElementById('loan1').value.length==0 || document.getElementById('months1').value==null || document.getElementById('months1').value.length==0 || document.getElementById('rate1').value==null || document.getElementById('rate1').value.length==0 ) {document.getElementById('pay1').value="Data Reqd.";}else {var pay1='';var princ1= document.getElementById('loan1').value;var term1= document.getElementById('months1').value;var intr1=document.getElementById('rate1').value / 1200;document.getElementById('pay1').value =Math.round(princ1 * intr1 / (1-(Math.pow(1/(1 + intr1), term1)))*100)/100; document.getElementById('gt1').value= Math.round((document.getElementById('pay1').value * document.getElementById('months1').value)*100)/100;document.getElementById('tintt1').value=Math.round((document.getElementById('gt1').value*1 - document.getElementById('loan1').value*1)*100)/100;}
+
+
+
+
+            google.charts.load('current', { 'packages': ['corechart'] });
+                 google.charts.setOnLoadCallback(drawChart);
+           
+                 
+                 var a=parseInt(document.getElementById("pay1").value);
+                 var b=parseInt(document.getElementById("tintt1").value);
+                 var c=parseInt(document.getElementById("gt1").value);
+           
+                 function drawChart() {
+           
+                  
+                   var options = {
+                     title: 'pie chart'
+                   };
+                   
+           
+                   var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+           
+                   chart.draw(data, options);
+                 }
+                 var data = google.visualization.arrayToDataTable([
+                     ['Task', 'Hours per Day'],
+                     ['Loan EMI', a ],
+                     ['Interest Payable', b],
+                     ['Total Payment', c]
+                   ]);
+           
+           
+           }
+           // Widget Code by https://credit.simpel.in
+           </script> 
+           <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+           <script>
+           
+             
+           
+           
+           
+           
+             </script>
+           
+           <!-- jQuery Min styles/js -->
+           <script src="styles/js/jquery-min.styles/js"></script>
+           <script src="styles/js/jquery-ui.styles/js"></script>
+           <script src="styles/js/jquery.ui.touch-punch.min.styles/js"></script>
+           
+           <!-- Popper Min styles/js -->
+           <script src="styles/js/popper.min.styles/js"></script>
+           <!-- Bootstrap Min styles/js -->
+           <script src="styles/js/bootstrap.min.styles/js"></script>
+           <!-- Owl Carousel Min styles/js -->
+           <script src="styles/js/owl.carousel.min.styles/js"></script>
+           <!-- Owl Plugins styles/js -->
+           <script src="styles/js/plugins.styles/js"></script>
+           <!-- Smooth scroll styles/js -->
+           <script src="styles/js/smoothscroll.styles/js"></script>
+           
+           <!-- morris charts -->
+           <script src="styles/js/raphael-min.styles/js"></script>
+           <script src="styles/js/morris.min.styles/js"></script>
+           <script src="styles/js/custom-morris.styles/js"></script>
+           
+      
+        
+        
+    </body>
+  
+
+
+<!-- Mirrored from zcube.in/bingle/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 May 2022 13:51:03 GMT -->
+<!-- </html> -->
+{% endblock body %}

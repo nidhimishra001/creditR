@@ -1,0 +1,126 @@
+/* ==== Services ====== */
+.services-section{
+	padding: 100px 0;
+}
+.service-box {
+    margin-top: 30px;
+    padding: 20px;
+    background: rgba(132,189,90,0.1);
+    text-align: center;
+	border-radius: 10px;
+	-webkit-transition: all 500ms linear;
+	-o-transition: all 500ms linear;
+	transition: all 500ms linear;
+}
+.service-box:hover {
+	-webkit-transform: translateY(-10px);
+    -ms-transform: translateY(-10px);
+    transform: translateY(-10px);
+}
+.service-icon {
+    display: inline-block;
+    padding: 20px;
+    background: #84BD5A;
+	border-radius: 50%;
+	-webkit-transition: all 500ms linear;
+	-o-transition: all 500ms linear;
+	transition: all 500ms linear;
+}
+.service-box:hover .service-icon{
+	background: rgba(50,33,83,1);
+}
+.service-icon img {
+	width: 50px;
+	filter: brightness(0) invert(1);
+}
+.service-box:hover .service-icon{		
+	background: rgba(50,33,83,1);
+}
+.service-box:hover .service-icon img{
+	filter: none;
+}
+h3.service-heading {
+    color: #322153;
+    margin-top: 20px;
+    font-weight: 500;
+    font-size: 24px;
+    background: rgba(50,33,83,0.1);
+    padding: 5px 15px;
+    display: inline-block;
+    border-radius: 10px;
+}
+p.service-para {
+    margin-top: 20px;
+    margin-bottom: 0;
+    color: #888;
+    font-size: 16px;
+    letter-spacing: 0.2px;
+}
+
+/* ===calculator end
+       /*==== calculator ======*/
+       .calculator-section{
+        padding: 100px 0;
+        background-color: rgba(0,0,0,0.035);
+    }
+    .form-calculator{
+        padding: 20px;
+        background: #fff;
+        margin-top: 30px;
+    }
+    .emi-details {
+        background: #fff;
+        margin-top: 30px;
+    }
+    .emi-details-head{
+        background: transparent linear-gradient(90deg, #7D4196 0%, #FF3494 100%) 0% 0% no-repeat padding-box;
+        /* background-color: rgba(129,185,88,0.6); */
+        padding: 10px;
+        text-align: center;
+    }
+    .emi-details-head h3{
+        color: #322153;
+    }
+    .emi-details-box {
+        padding: 20px;
+        border-bottom: 1px solid #ddd;
+    }
+    .emi-details-box h5{
+        color: #322153;
+        font-weight: bold;	
+        font-size: 31px;
+    }
+    .no-bottom-border{
+        border-bottom: none;
+    }
+    .pie-chart{
+        padding: 20px;
+        background: #fff;
+        margin-top: 30px;
+    }
+    .pie-chart text tspan{
+        font-weight: 500 !important;
+    }
+    .chart-principal, .chart-interest{
+        position: relative;
+        color: #999999;
+        margin-left: 20px;
+    }
+    .chart-principal::before{
+        content: "";
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        background-color: #322153;
+        top: 3px;
+        left: -14px;
+    }
+    .chart-interest::before{
+        content: "";
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        background-color: #9d0e7e;
+        top: 3px;
+        left: -14px;
+    }
