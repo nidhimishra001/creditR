@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'ckeditor',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [
@@ -75,21 +76,21 @@ WSGI_APPLICATION = 'creditR.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
 
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'vikas kushwaha',
-#         'USER':'inventics',
-#         'PASSWORD':'puneet/pacindia@2019',
-#         'HOST':'143.110.153.20',
-#         'PORT': '3306',
+#         'NAME': 'nutrydbv2',
+#         'USER':'nutry',
+#         'PASSWORD':'pacindia@2019',
+#         'HOST':'157.245.96.58',
+        
 #     }
 # }
 

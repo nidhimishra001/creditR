@@ -11,6 +11,7 @@ from django.core.paginator import Paginator,EmptyPage,PageNotAnInteger
 from django.core.paginator import Paginator
 from django.contrib import messages
 
+
 # Create your views here.
 
 def index(request):
@@ -54,6 +55,7 @@ def logoutUser(request):
      return redirect('/login')
 
 
+
 def contact(request):
     form=ContactForm()
     if request.method=="POST":
@@ -62,13 +64,13 @@ def contact(request):
                 print("validated")
                 form.save()
                 messages.add_message(request, messages.INFO, 'This is done')
-                return redirect("contact")
+                return redirect("/")
                
         else:
                 print(form.errors)
                 messages.add_message(request, messages.INFO, 'some error ')      
     context={'form':form}    
-    return render(request,'contact.html',context)
+    return render(request,'index-2.html',context)
 
    
 

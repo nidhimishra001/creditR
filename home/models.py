@@ -1,8 +1,11 @@
+from tabnanny import verbose
 from unittest.util import _MAX_LENGTH
 from django.db import models
 # from ckeditor.fields import RichTextField
 from datetime import datetime,date
 from ckeditor.fields import RichTextField
+
+
 # Create your models here.
  
 class Contact(models.Model):
@@ -13,6 +16,12 @@ class Contact(models.Model):
     def __str__(self):
         return self.name
 
+
+class Tag(models.Model):
+    tag=models.CharField(max_length=50)
+    def __str__(self):
+        return self.tag
+
 class Blog(models.Model):
     blogname=models.CharField(max_length=50,null=True,default=None)
     description=models.CharField(max_length=300,null=True,default=None)
@@ -20,7 +29,7 @@ class Blog(models.Model):
     image=models.ImageField(upload_to='media/images/',null=True,default=None)
     date=models.DateField(null=True,default=None)
     editor=RichTextField(blank=True,null=True)
-   
+    tags=models.ManyToManyField(Tag,verbose_name="My Tags", null=True,default=None)
     def __str__(self):
         return self.blogname
 
@@ -39,10 +48,15 @@ class ClientsFeedback(models.Model):
     def __str__(self):
         return self.clientname
 
-class Tag(models.Model):
+
+
+class Vir(models.Model):
     tag=models.CharField(max_length=50)
     def __str__(self):
         return self.tag
+       
+
+
 
 
 
