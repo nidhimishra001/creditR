@@ -1,4 +1,4 @@
-from termios import B1200
+# from termios import B1200
 from turtle import setundobuffer
 from django.shortcuts import render
 from home.models import Contact,Pet,Blog
@@ -10,7 +10,6 @@ from django.shortcuts import redirect
 from django.core.paginator import Paginator,EmptyPage,PageNotAnInteger
 from django.core.paginator import Paginator
 from django.contrib import messages
-
 
 # Create your views here.
 
@@ -65,7 +64,6 @@ def contact(request):
                 form.save()
                 messages.add_message(request, messages.INFO, 'This is done')
                 return redirect("/")
-               
         else:
                 print(form.errors)
                 messages.add_message(request, messages.INFO, 'some error ')      
@@ -74,32 +72,32 @@ def contact(request):
 
    
 
-# def blogpostform(request):
-#     if( request.method=="POST"):
-#         form=BlogForm(request.POST)
-#         if form.is_valid():
-#            print("valid")
-#            return redirect("index-2.html")
-#     # blogpostform.save()
-#     form=BlogForm()
-#     return render(request,'blogform.html',{'form':form})
+def blogpostform(request):
+    if( request.method=="POST"):
+        form=BlogForm(request.POST)
+        if form.is_valid():
+           print("valid")
+           return redirect("index-2.html")
+    # blogpostform.save()
+    form=BlogForm()
+    return render(request,'blogform.html',{'form':form})
 
 
  
 
-# def blogdetails(request,idd):
-#     if(request.user.is_anonymous):
-#         return redirect("/login")
-#     else:
-#         blogs=Blog.objects.all()
-#     P=Paginator(Blog.objects.all(),6)
-#     page=request.GET.get('page')
-#     blogs=P.get_page(page)
-#     context={
-#                 'blogpost':blogpost
-#             } 
-#         # return render(request,'contact.html') 
-#     return render(request,'blog-details.html',context)      
+def blog(request,idd):
+    if(request.user.is_anonymous):
+        return redirect("/login")
+    else:
+        blogs=Blog.objects.all()
+    P=Paginator(Blog.objects.all(),6)
+    page=request.GET.get('page')
+    blogs=P.get_page(page)
+    context={
+                'blogs':blogs
+            } 
+        # return render(request,'contact.html') 
+    return render(request,'blog-details.html',context)      
  
 def pet(request):
     pets=Pet.objects.all()
@@ -120,8 +118,7 @@ def blogdetails(request,idd):
         context={
                 'blogpost':blogpost,
                 'blogs':blogs
-
-            } 
+    } 
 
     #     blogs=Blog.objects.all()
     # P=Paginator(Blog.objects.all(),6)
